@@ -28,7 +28,7 @@ def subtraction(first, second):
     if dialog_state != "COMPLETED":
         return delegate()
 
-    difference = first + second
+    difference = first - second
     return statement('The difference of {} and {} is {}'.format(first, second, difference))
     
 if __name__ == '__main__':

@@ -14,5 +14,17 @@ def launched():
 def one_liner():
     return statement('Warning, keyboard not found. Press Enter to continue.')
 
+@ask.intent('KnockKnock')
+def knock_knock():
+    return question('Knock Knock')
+
+@ask.intent('WhosThere')
+def who():
+    return question('Bing')
+
+@ask.intent('Bing')
+def bing():
+    return statement('No, I usually prefer Google.')
+
 if __name__ == '__main__':
     app.run(debug=True)

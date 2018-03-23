@@ -17,9 +17,10 @@ def launched ():
 def addition(first, second):
     dialog_state = get_dialog_state()
     if dialog_state != "COMPLETED":
-        return delegate(speech = None)
+        return delegate()
 
     sum = first + second
     return statement('The sum of {} and {} is {}'.format(first, second, sum))
     
+if __name__ == '__main__':
     app.run(debug=True)

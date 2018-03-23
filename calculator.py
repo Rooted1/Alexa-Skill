@@ -30,6 +30,24 @@ def subtraction(first, second):
 
     difference = first - second
     return statement('The difference of {} and {} is {}'.format(first, second, difference))
+
+@ask.intent('Multiplication', convert={'first': int, 'second': int})
+def multiplication(first, second):
+    dialog_state = get_dialog_state()
+    if dialog_state != "COMPLETED":
+        return delegate()
+
+    multiplication = first * second
+    return statement('The multiplication of {} and {} is {}'.format(first, second, multiplication))
+
+@ask.intent('Division', convert={'first': int, 'second': int})
+def division(first, second):
+    dialog_state = get_dialog_state()
+    if dialog_state != "COMPLETED":
+        return delegate()
+
+    division = first / second
+    return statement('The division of {} and {} is {}'.format(first, second, division))
     
 if __name__ == '__main__':
     app.run(debug=True)

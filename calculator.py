@@ -21,6 +21,15 @@ def addition(first, second):
 
     sum = first + second
     return statement('The sum of {} and {} is {}'.format(first, second, sum))
+
+@ask.intent('Subtraction', convert={'first': int, 'second': int})
+def subtraction(first, second):
+    dialog_state = get_dialog_state()
+    if dialog_state != "COMPLETED":
+        return delegate()
+
+    difference = first + second
+    return statement('The difference of {} and {} is {}'.format(first, second, difference))
     
 if __name__ == '__main__':
     app.run(debug=True)
